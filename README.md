@@ -17,3 +17,8 @@ sent.
 
 [Daniel Lewis](https://daniellewis.dev) ([@djjlewis](https://twitter.com/djjlewis))
 
+## NUGET
+
+```<language>
+Install-Package Imprise.MediatR.Extensions.Caching -Version 1.0.0-alpha
+```
