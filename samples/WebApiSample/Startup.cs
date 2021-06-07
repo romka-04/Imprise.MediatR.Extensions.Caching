@@ -11,14 +11,19 @@ namespace WebApiSample
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddControllers();
+            services.AddMemoryCache();
             AddMediator(services);
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
-            app.UseMvc();
+            app.UseRouting();
+            app.UseEndpoints(endpoint =>
+            {
+                endpoint.MapControllers();
+            });
         }
 
         private static IServiceCollection AddMediator(IServiceCollection services)
